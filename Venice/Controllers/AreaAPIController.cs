@@ -11,19 +11,29 @@ using Venice.Utility;
 namespace Venice.Controllers
 {
     [Route("api/[controller]")]
-    public class APIController:Controller
+    public class AreaAPIController:Controller
     {
         private  readonly VeniceDbContext _context;
 
-        public APIController(VeniceDbContext context)
+        public AreaAPIController(VeniceDbContext context)
         {
             _context = context;
         }
-        [HttpPost]
-        public async Task Add(Area item)
+
+        [HttpPost("[action]")]
+        public async Task<string> Add([FromBody] Area item)
         {
             await _context.Areas.AddAsync(item);
             await _context.SaveChangesAsync();
+            return "OK";
+        }
+
+        [HttpPost("[action]")]
+        public async Task<bool> Delete([FromBody] Area item)
+        {
+             _context.Areas.Remove(item);
+            await _context.SaveChangesAsync();
+            return true;
         }
 
         [HttpGet("{id}", Name = "GetAreaById")]
@@ -32,8 +42,8 @@ namespace Venice.Controllers
             return await _context.Areas.Where(it=>it.Id == id).FirstOrDefaultAsync();
         }
 
-        [HttpGet]
-        public async Task<IList<Area>> GetAllAreas(int id)
+        [HttpGet("[action]")]
+        public async Task<IList<Area>> GetAllAreas()
         {
             return await _context.Areas.ToListAsync();
         }

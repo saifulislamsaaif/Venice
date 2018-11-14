@@ -10,15 +10,8 @@ namespace Venice.Controllers
 {
     public class HomeController :Controller
     {
-        private readonly VeniceDbContext _context;
-
-        public HomeController(VeniceDbContext context)
-        {
-            _context = context;
-        }
         public IActionResult Index()
         {
-            var sss = _context.Areas.ToList();
             return View();
         }
 
