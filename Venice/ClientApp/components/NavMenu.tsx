@@ -3,38 +3,56 @@ import { Link, NavLink } from 'react-router-dom';
 
 export class NavMenu extends React.Component<{}, {}> {
     public render() {
-        return <div className='main-nav'>
-                <div className='navbar navbar-inverse'>
-                <div className='navbar-header'>
-                    <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-                        <span className='sr-only'>Toggle navigation</span>
-                        <span className='icon-bar'></span>
-                        <span className='icon-bar'></span>
-                        <span className='icon-bar'></span>
-                    </button>
-                    <Link className='navbar-brand' to={ '/' }>Venice</Link>
-                </div>
-                <div className='clearfix'></div>
-                <div className='navbar-collapse collapse'>
-                    <ul className='nav navbar-nav'>
-                        <li>
-                            <NavLink to={ '/' } exact activeClassName='active'>
-                                <span className='glyphicon glyphicon-home'></span> Home
-                            </NavLink>
+        return <div>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
+            <aside id="SideMenu" className="SideMenu">
+                <div className="SideNavigation">
+                    <ul className="Side-Accordion" id="Side-Accordion">
+                        <li><NavLink to={'/fetchdata'} > <i className="fa fa-dashboard"></i>Sample Call </NavLink></li>
+                        <li><NavLink to={'/fetchdata'} > Product Category </NavLink></li>
+                        <li><NavLink to={'/fetchdata'} > Product Setup</NavLink></li>
+                        <li className="Sub-Accordion">
+                            <a href="javascript:;"><i className="fa fa-tasks"></i><span>User Location Setup</span></a>
+                            <ul className="Sub-AccordionList Active">
+                                <li><NavLink to={'/'} >City</NavLink></li>
+                                <li><NavLink to={'/'} >Region</NavLink></li>
+                                <li><NavLink to={'/counter'}  > Area </NavLink></li>
+                            </ul>
                         </li>
-                        <li>
-                            <NavLink to={ '/counter' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-education'></span> Counter
-                            </NavLink>
+
+                        <li className="Sub-Accordion">
+                            <a href="javascript:;"><i className="fa fa-building-o"></i><span>Product Setup</span></a>
+                            <ul className="Sub-AccordionList">
+
+                                <li><a href="#">Title</a></li>
+                            </ul>
                         </li>
-                        <li>
-                            <NavLink to={ '/fetchdata' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Fetch data
-                            </NavLink>
+
+                        <li className="Sub-Accordion">
+                            <a href="javascript:;"><i className="fa fa-bar-chart-o"></i><span>Report</span></a>
+                            <ul className="Sub-AccordionList">
+
+                                <li><a href="#">Monthly Selling Ratio</a></li>
+                                <li><a href="#">Visitor Location</a></li>
+                                <li><a href="#">Most Visited Items</a></li>
+                            </ul>
                         </li>
+                        <li className="Sub-Accordion">
+                            <a href="javascript:;"><i className="fa fa-gears"></i><span>Administration</span></a>
+                            <ul className="Sub-AccordionList">
+                                <li><a href="#">Configuration</a></li>
+                                <li><a href="#">Permission</a></li>
+                                <li><a href="#">User</a></li>
+                                <li><a href="#">User Type</a></li>
+                                <li><a href="#">Login Log</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </div>
-            </div>
-        </div>;
+            </aside>
+        </div>
+
+            ;
     }
 }

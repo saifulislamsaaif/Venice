@@ -1,0 +1,431 @@
+/* ----------------------- Tag ---------------------------- */
+
+* a:active {
+    outline: none;
+}
+
+* a:focus {
+    outline: none;
+}
+
+html {
+    font-family: 'Segoe UI', Roboto, Verdana, Arial, Helvetica, 'Helvetica Neue';
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #767676;
+    background: #f1f2f7;
+    font-size: 14px;
+    text-rendering: optimizeLegibility;
+    height: 100%;
+}
+
+::selection, ::-moz-selection {
+    background: #f15a22;
+    color: #fff;
+}
+
+a, a:hover, a:visited, a:active {
+    text-decoration: none !important;
+}
+
+/* ----------------------- / Tag -------------------------- */
+
+
+
+/* ----------------------- Common ------------------------- */
+
+.Clear {
+    clear: both;
+    position: relative;
+    height: 0;
+}
+
+.ButtonCircle {
+    background: #eee !important;
+    color: #555 !important;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 5px 0 0 0;
+    padding-top: 11px !important;
+    padding-left: 14px !important;
+}
+
+    .ButtonCircle:hover {
+        background: #f15a22 !important;
+        color: #fff !important;
+    }
+
+    .ButtonCircle:active {
+        background: #eee !important;
+        color: #555 !important;
+    }
+
+#btnSideMenu {
+    padding-top: 11px !important;
+    padding-left: 14px !important;
+    margin-left: -21px;
+}
+
+#btnLock {
+    padding-top: 11px !important;
+    padding-left: 15px !important;
+    margin-right: 20px !important;
+    margin-left: 10px !important;
+}
+
+#btnNotification {
+    padding-top: 11px !important;
+    padding-left: 13px !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.navbar-brand {
+    padding: 10px 15px 5px 15px;
+    width: 220px;
+    border-right: solid 1px #ddd;
+}
+
+.MainContent {
+    margin-left: 220px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.SideMenu {
+    width: 220px;
+    float: left;
+    bottom: 0;
+    margin-top: -20px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border-right: solid 1px #ddd;
+    background-color: #fff;
+}
+
+
+.SideMenu-Hide {
+    margin-left: -220px !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.SideMenu-Merge {
+    margin-left: 0px !important;
+}
+
+.SideMenu-Open-Right-Panel {
+    margin-left: -220px !important;
+}
+
+.SideMenu-Merge-Header {
+    margin-right: 220px;
+}
+
+.SideNavigation {
+    list-style-type: none;
+    margin: 0 0 50px 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    background-color: #eee;
+}
+
+#Side-Accordion {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 13px;
+    display: block;
+    font-weight: 300;
+}
+
+    #Side-Accordion li {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+        #Side-Accordion li i {
+            margin-right: 5px;
+        }
+
+        #Side-Accordion li a {
+            padding: 15px 10px 15px 10px;
+            display: block;
+            margin: 0;
+            border-bottom: solid 1px #fff;
+            border-left: 5px solid #eee;
+            background-color: #eee;
+            color: #555;
+        }
+
+            #Side-Accordion li a.Active {
+                border-bottom: solid 1px #fff;
+                border-left: 5px solid #777;
+                background-color: #f2f2f2;
+                color: #444;
+            }
+
+            #Side-Accordion li a:hover {
+                border-bottom: solid 1px #fff;
+                border-left: 5px solid #f15a22;
+                background-color: #e9e9e9;
+                color: #333;
+            }
+
+        #Side-Accordion li ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+            #Side-Accordion li ul a {
+                padding: 5px 5px 5px 35px;
+                margin: 0;
+                background-color: #f7f7f7;
+            }
+
+.Sub-AccordionList {
+    display: none;
+}
+
+
+    .Sub-AccordionList.Active {
+        display: block;
+    }
+
+.FocusBreadCrumb {
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+}
+
+.FocusHeader {
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+    .FocusHeader h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 25px;
+    }
+
+.WarningArea {
+    margin: 10px 0 10px 0;
+    padding: 20px;
+}
+
+
+.LoginBox {
+    width: 350px;
+    margin: 70px auto;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.2) !important;
+    border: solid 0px #eee;
+}
+
+    .LoginBox h2.LoginBox-Heading {
+        margin: 0;
+        padding: 35px 0 35px 0;
+        text-align: center;
+        background: #fff;
+        border-radius: 5px 5px 0 0;
+        -webkit-border-radius: 5px 5px 0 0;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        border-bottom: 10px solid #eee;
+    }
+
+    .LoginBox .checkbox {
+        margin: 25px 25px 25px 45px;
+    }
+
+    .LoginBox .checkbox {
+        font-weight: normal;
+        color: #b6b6b6;
+    }
+
+    .LoginBox .form-control {
+        position: relative;
+        font-size: 16px;
+        height: auto;
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+        .LoginBox .form-control:focus {
+            z-index: 2;
+        }
+
+    .LoginBox input[type="text"], .LoginBox input[type="password"] {
+        margin: 25px;
+        -webkit-border-radius: 5px;
+        border: 1px solid #eaeaea;
+        box-shadow: none;
+        font-size: 12px;
+        width: 86%;
+    }
+
+    .LoginBox .btn-login {
+        color: #fff;
+        text-transform: uppercase;
+        margin: 25px;
+        width: 86%;
+        margin-bottom: 30px;
+    }
+
+    .LoginBox p {
+        text-align: left;
+        color: #b6b6b6;
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .LoginBox a, .LoginBox a:hover {
+        color: #1fb5ac;
+    }
+
+        .LoginBox a:hover {
+            text-decoration: underline;
+        }
+
+    .LoginBox .TextLine {
+        padding: 25px 0 0 0;
+    }
+
+    .LoginBox .LinkLine {
+        padding: 0 0 0 25px;
+    }
+
+.With-PIN .LinkLine, .With-PIN .TextLine, .With-PIN input {
+    text-align: center;
+}
+
+.Form-Block label {
+    display: block;
+}
+
+.Form-Line label {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.Form-List label {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.ToastBox {
+    display: none;
+}
+
+
+.NotificationList li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+    .NotificationList li span {
+        color: #900;
+        font-style: italic;
+        font-weight: normal;
+        font-size: 11px;
+        margin-left: 10px;
+    }
+
+/* ----------------------- / Common -------------------------- */
+
+
+
+/* ----------------------- Grid ------------------------- */
+
+.GridArea {
+}
+
+.GridFilterBox {
+}
+
+.grid-filter-header {
+    display: block !important;
+}
+
+.k-grouping-header {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.k-grid tbody .k-button {
+    min-width: 35px;
+    width: 2em;
+    text-align: center;
+}
+
+    .k-grid tbody .k-button .k-icon {
+        margin: 1px;
+    }
+
+.GridBottomToolbar {
+    margin: 10px 0 250px 0;
+}
+
+
+.GridCellAlignCenter {
+    text-align: center;
+    width: 100%;
+}
+
+.GridCellAlignLeft {
+    text-align: left;
+    width: 100%;
+}
+
+.GridCellAlignRight {
+    text-align: right;
+    width: 100%;
+}
+
+.GridBox [role=gridcell] {
+    white-space: nowrap;
+}
+
+.GridBox [data-cell-align=Center] {
+    text-align: center;
+}
+
+.GridBox [data-cell-align=Left] {
+    text-align: left;
+}
+
+.GridBox [data-cell-align=Right] {
+    text-align: right;
+}
+
+
+
+/* ----------------------- / Grid -------------------------- */
+
