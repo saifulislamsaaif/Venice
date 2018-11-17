@@ -11,7 +11,7 @@ interface FetchDataAreaState {
 export class FetchData extends React.Component<RouteComponentProps<{}>, FetchDataAreaState> {
     constructor() {
         super();
-        this.state = { areas: [], loading: true, areaText: ''};
+        this.state = { areas: [], loading: true, areaText: '' };
 
         this.readData();
     };
@@ -36,26 +36,26 @@ export class FetchData extends React.Component<RouteComponentProps<{}>, FetchDat
             areaName: this.state.areaText,
             id: 0
         }
-            fetch('api/AreaAPI/Add',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(form)
-                }).then(data => {
-                    if (data.statusText == "OK") {
-                        this.readData();
-                    }
-                });
+        fetch('api/AreaAPI/Add',
+            {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(form)
+            }).then(data => {
+                if (data.statusText == "OK") {
+                    this.readData();
+                }
+            });
 
         this.setState({
             areaText: ''
         });
     };
 
-   
+
 
     public render() {
         let contents = this.state.loading
@@ -68,9 +68,9 @@ export class FetchData extends React.Component<RouteComponentProps<{}>, FetchDat
             </div>
             <section className="panel">
                 <div className="panel-body">
-               
-            <input type="text" id="areaText" value={this.state.areaText} className="form-control" onChange={this.handleChange.bind(this)}/>
-            <button onClick={this.onSubmit}>Add Area</button>
+
+                    <input type="text" id="areaText" value={this.state.areaText} className="form-control" onChange={this.handleChange.bind(this)} />
+                    <button onClick={this.onSubmit}>Add Area</button>
                     {contents}
 
                 </div>
@@ -90,187 +90,18 @@ export class FetchData extends React.Component<RouteComponentProps<{}>, FetchDat
             <tbody>
                 {areas.map(area =>
                     <tr key={area.id}>
-                        <td>{area.id }</td>
+                        <td>{area.id}</td>
                         <td>{area.areaName}</td>
                         <td>Delete</td>
-                </tr>
-            )}
+                    </tr>
+                )}
             </tbody>
         </table>
-
-             
-            <nav aria-label="...">
-                <ul className="pagination">
-                    <li className="page-item disabled">
-                        <span className="page-link">Previous</span>
-                    </li>
-                    <li className="page-item"><a className="page-link" href="#">1</a></li>
-                    <li className="page-item active">
-                        <span className="page-link">
-                            2
-        <span className="sr-only">(current)</span>
-                        </span>
-                    </li>
-                    <li className="page-item"><a className="page-link" href="#">3</a></li>
-                    <li className="page-item">
-                        <a className="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
-
-
-            <div className="card card-cascade narrower">
-
-                <div className="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
-
-                    <div>
-                        <button type="button" className="btn btn-outline-white btn-rounded btn-sm px-2">
-                            <i className="fa fa-th-large mt-0"></i>
-                        </button>
-                        <button type="button" className="btn btn-outline-white btn-rounded btn-sm px-2">
-                            <i className="fa fa-columns mt-0"></i>
-                        </button>
-                    </div>
-
-                    <a href="" className="white-text mx-3">Table name</a>
-
-                    <div>
-                        <button type="button" className="btn btn-outline-white btn-rounded btn-sm px-2">
-                            <i className="fa fa-pencil mt-0"></i>
-                        </button>
-                        <button type="button" className="btn btn-outline-white btn-rounded btn-sm px-2">
-                            <i className="fa fa-remove mt-0"></i>
-                        </button>
-                        <button type="button" className="btn btn-outline-white btn-rounded btn-sm px-2">
-                            <i className="fa fa-info-circle mt-0"></i>
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div className="px-4">
-
-                    <div className="table-wrapper">
-                    
-      <table className="table table-hover mb-0">
-
-                        
-        <thead>
-                                <tr>
-                                    <th>
-                                        <input className="form-check-input" type="checkbox" id="checkbox"/>
-                                        <label className="form-check-label mr-2 label-table"></label>
-                                     </th>
-                                        <th className="th-lg">
-                                            <a>First Name
-                <i className="fa fa-sort ml-1"></i>
-                                            </a>
-                                        </th>
-                                        <th className="th-lg">
-                                            <a href="">Last Name
-                <i className="fa fa-sort ml-1"></i>
-                                            </a>
-                                        </th>
-                                        <th className="th-lg">
-                                            <a href="">Username
-                <i className="fa fa-sort ml-1"></i>
-                                            </a>
-                                        </th>
-                                        <th className="th-lg">
-                                            <a href="">Username
-                <i className="fa fa-sort ml-1"></i>
-                                            </a>
-                                        </th>
-                                        <th className="th-lg">
-                                            <a href="">Username
-                <i className="fa fa-sort ml-1"></i>
-                                            </a>
-                                        </th>
-                                        <th className="th-lg">
-                                            <a href="">Username
-                <i className="fa fa-sort ml-1"></i>
-                                            </a>
-                                        </th>
-          </tr>
-        </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            <input className="form-check-input" type="checkbox" id="checkbox1"/>
-                                                <label className="form-check-label"></label>
-            </th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>mdo</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>mdo</td>
-          </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <input className="form-check-input" type="checkbox" id="checkbox2"/>
-                                        <label className="form-check-label label-table" ></label>
-            </th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>fat</td>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>fat</td>
-          </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <input className="form-check-input" type="checkbox" id="checkbox3"/>
-                                        <label className="form-check-label label-table" ></label>
-            </th>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>twitter</td>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>twitter</td>
-          </tr>
-                                                <tr>
-                                                    <th scope="row">
-                                                        <input className="form-check-input" type="checkbox" id="checkbox4"/>
-                                        <label className="form-check-label label-table"  ></label>
-            </th>
-                                                        <td>Paul</td>
-                                                        <td>Topolski</td>
-                                                        <td>P_Topolski</td>
-                                                        <td>Paul</td>
-                                                        <td>Topolski</td>
-                                                        <td>P_Topolski</td>
-          </tr>
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <input className="form-check-input" type="checkbox" id="checkbox5"/>
-                                        <label className="form-check-label label-table" ></label>
-            </th>
-                                                            <td>Larry</td>
-                                                            <td>the Bird</td>
-                                                            <td>twitter</td>
-                                                            <td>Larry</td>
-                                                            <td>the Bird</td>
-                                                            <td>twitter</td>
-          </tr>
-        </tbody>
-
-      </table>
-
-    </div>
-
-  </div>
-
-</div>
-
-            </div>;
+        </div>;
     }
 }
 
-interface Area{
+interface Area {
     id: number;
     areaName: string
 }

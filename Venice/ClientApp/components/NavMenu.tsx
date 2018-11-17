@@ -9,8 +9,10 @@ export class NavMenu extends React.Component<{}, {}> {
                 <div className="SideNavigation">
                     <ul className="Side-Accordion" id="Side-Accordion">
                         <li><NavLink to={'/fetchdata'} > <i className="fa fa-dashboard"></i>Sample Call </NavLink></li>
+                        
+                        <li><NavLink to={'/products'} > Product List</NavLink></li>
+                        <li><NavLink to={'/product'} > Product Detail</NavLink></li>
                         <li><NavLink to={'/fetchdata'} > Product Category </NavLink></li>
-                        <li><NavLink to={'/fetchdata'} > Product Setup</NavLink></li>
                         <li className="Sub-Accordion">
                             <a href="javascript:;"><i className="fa fa-tasks"></i><span>User Location Setup</span></a>
                             <ul className="Sub-AccordionList Active">

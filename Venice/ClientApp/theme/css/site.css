@@ -429,3 +429,25 @@ a, a:hover, a:visited, a:active {
 
 /* ----------------------- / Grid -------------------------- */
 
+.center-block {
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 250px;
+    /* background-color: #eceadc;
+         color: #ec8007
+    */
+}
+.w-100 {
+width : 100px;
+}
+.d-block {
+    display: inline-block;
+    float:left;
+    background-color:floralwhite;
+    border-color:lightgray;
+    padding:4px;
+}
+.form-control {
+width:90%;
+}
