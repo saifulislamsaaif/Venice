@@ -48,10 +48,10 @@ namespace Venice.Controllers
             return await _context.Areas.ToListAsync();
         }
 
-        [HttpGet]
+        [HttpGet("[action]")]
         public IList<Area> GetPagedAreas(int currentPageNumber , int pageSize)
         {
-            return _context.Areas.GetPaged(1,5).Results;
+            return _context.Areas.GetPaged(currentPageNumber, pageSize).Results;
         }
 
     }

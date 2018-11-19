@@ -17,7 +17,7 @@ export class FetchData extends React.Component<RouteComponentProps<{}>, FetchDat
     };
     //TODO: GET AND POST FUNCTION SOULD BE GENERIC. SAIF WILL DO THAT
     readData = function () {
-        fetch('api/AreaAPI/GetAllAreas')
+        fetch('api/AreaAPI/GetPagedAreas?currentPageNumber=1&pageSize=3')
             .then(response => response.json() as Promise<Area[]>)
             .then(data => {
                 this.setState({ areas: data, loading: false });
@@ -97,6 +97,26 @@ export class FetchData extends React.Component<RouteComponentProps<{}>, FetchDat
                 )}
             </tbody>
         </table>
+            <div className="center-block">
+                <nav aria-label="...">
+                    <ul className="pagination">
+                        <li className="page-item disabled">
+                            <span className="page-link">Previous</span>
+                        </li>
+                        <li className="page-item"><a className="page-link" href="#">1</a></li>
+                        <li className="page-item active">
+                            <span className="page-link">
+                                2
+                                    <span className="sr-only">(current)</span>
+                            </span>
+                        </li>
+                        <li className="page-item"><a className="page-link" href="#">3</a></li>
+                        <li className="page-item">
+                            <a className="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>;
     }
 }
