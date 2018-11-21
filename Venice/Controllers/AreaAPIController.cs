@@ -49,9 +49,14 @@ namespace Venice.Controllers
         }
 
         [HttpGet("[action]")]
-        public IList<Area> GetPagedAreas(int currentPageNumber , int pageSize)
+        public IActionResult GetPagedAreas(int currentPageNumber , int pageSize)
         {
-            return _context.Areas.GetPaged(currentPageNumber, pageSize).Results;
+            var result = _context.Areas.OrderBy(keySelector: it => it.AreaName).GetPaged(currentPageNumber, pageSize);
+            List<Area> data = result.Results.ToList();
+            int count = result.RowCount;
+            int pageCount = result.PageCount;
+            var data1 = new { data, pageCount};
+            return base.Json(data1);
         }
 
     }
