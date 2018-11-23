@@ -8,6 +8,7 @@ namespace Venice.Models
         public long Id { get; set; }
         public long ProductId { get; set; }
         public bool IsPrimaryImage { get; set; }
+        public string ImageExtension { get; set; }
         public byte[] Data { get; set; }
 
         public Product Product { get; set; }

@@ -11,9 +11,10 @@ using Venice.Models;
 namespace Venice.Migrations
 {
     [DbContext(typeof(VeniceDbContext))]
-    partial class VeniceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181123080233_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -10,7 +10,7 @@ namespace Venice.Models
         public long ProductId { get; set; }
         public DateTime Date { get; set; }
         public int Point { get; set; }
-        public byte[] Description { get; set; }
+        public string Description { get; set; }
         public bool IsApproved { get; set; }
 
         public Product Product { get; set; }
